@@ -1,6 +1,0 @@
-// shift 
-// options.direction - left,right,down,up
-jQuery.extend(jQuery.easing,{easeInOutCubic:function(e,a,d,c,l){return 1>(a/=l/2)?c/2*a*a*a+d:c/2*((a-=2)*a*a+2)+d}});
-function ws_shift(e,a,d){var c=jQuery,l=c(this);d.find("li");var n=d.find(".ws_list"),f={position:"absolute",top:0,left:0,width:"100%",height:"100%",overflow:"hidden"},g=c("<div>").addClass("ws_effect ws_shift").css(f).appendTo(d),h=c("<div>").css(f).css({display:"none",zIndex:4}).appendTo(g),k=c("<div>").css(f).css({display:"none",zIndex:3}).appendTo(g);this.go=function(b,f,m){m=d.width();var g=d.height();h.append(c(a.get(b)).clone());k.append(c(a.get(f)).clone());3>e.responsive&&(h.find("img").css("width",
-"100%"),k.find("img").css("width","100%"));n.stop(!0,!0).hide().css({left:-b+"00%"});b={left:[{left:-m},{left:0}],right:[{left:m},{left:0}],down:[{top:g},{top:0}],up:[{top:-g},{top:0}]}[e.direction||["left","right","down","up"][Math.floor(4*Math.random())]];e.support.transform&&(b[0]=b[0].left?{translate:[b[0].left,0,0]}:{translate:[0,b[0].top,0]},b[1]={translate:[0,0,0]});h.show();k.show();wowAnimate(h,b[0],b[1],e.duration,"easeInOutCubic",function(){n.show();h.hide().html("");k.hide().html("");
-l.trigger("effectEnd")});wowAnimate(k,{scale:1,translate:[0,0,0]},{scale:.5,translate:[0,0,0]},e.duration,"easeInOutCubic")}};
